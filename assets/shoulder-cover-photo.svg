@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Photographic style shoulder mobility training scene">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b7c8d8"/>
+      <stop offset="45%" stop-color="#8ea3b7"/>
+      <stop offset="100%" stop-color="#5e7084"/>
+    </linearGradient>
+    <radialGradient id="window" cx="78%" cy="22%" r="42%">
+      <stop offset="0%" stop-color="#edf4fb" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#edf4fb" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#efc4a2"/>
+      <stop offset="100%" stop-color="#cb9873"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4a6178"/>
+      <stop offset="100%" stop-color="#25394d"/>
+    </linearGradient>
+    <filter id="grain" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.05" numOctaves="2" seed="23" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.08"/>
+      </feComponentTransfer>
+    </filter>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="9" stdDeviation="10" flood-color="#1a2430" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#window)"/>
+  <rect y="486" width="1200" height="189" fill="#344a5f"/>
+
+  <g filter="url(#shadow)">
+    <ellipse cx="600" cy="214" rx="92" ry="108" fill="url(#skin)"/>
+    <path d="M525 223c-3-72 68-122 143-101 46 13 75 53 81 94-35-26-90-20-126-8-37 13-67 25-98 45-2-9-2-19 0-30z" fill="#2c3a49"/>
+    <path d="M489 341c41-33 90-52 113-51 29 1 87 20 125 50 38 30 63 78 63 124v105H410V469c0-53 32-101 79-128z" fill="url(#shirt)"/>
+    <path d="M536 343c27 7 46 34 64 65 20-32 38-57 63-65v74c-22 27-41 49-62 66-20-18-40-41-65-67v-73z" fill="url(#skin)"/>
+    <path d="M601 431c-87 8-168 34-239 74" stroke="#9db4c9" stroke-width="16" stroke-linecap="round" fill="none"/>
+    <path d="M601 431c90 8 170 35 242 78" stroke="#9db4c9" stroke-width="16" stroke-linecap="round" fill="none"/>
+    <path d="M362 503c44 34 98 64 148 76" stroke="#6d859a" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <path d="M843 509c-44 34-100 64-150 74" stroke="#6d859a" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <circle cx="362" cy="503" r="26" fill="url(#skin)"/>
+    <circle cx="843" cy="509" r="26" fill="url(#skin)"/>
+  </g>
+
+  <rect width="1200" height="675" filter="url(#grain)"/>
+</svg>

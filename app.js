@@ -23,9 +23,9 @@ const videoMap = {
 };
 
 const posterMap = {
-  neck: "assets/neck-cover.svg",
-  shoulder: "assets/shoulder-cover.svg",
-  leg: "assets/leg-cover.svg"
+  neck: "https://images.pexels.com/photos/4587690/pexels-photo-4587690.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1280&h=560",
+  shoulder: "https://images.unsplash.com/photo-1434596922112-19c563067271?auto=format&fit=crop&w=1280&h=560&q=80",
+  leg: "https://images.pexels.com/photos/6303435/pexels-photo-6303435.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1280&h=560"
 };
 
 function showPage(page) {
@@ -42,9 +42,10 @@ playButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
     const taskCard = event.currentTarget.closest(".task-card");
     const taskKey = taskCard?.dataset.task || "neck";
+    const taskCover = taskCard?.querySelector(".cover img")?.getAttribute("src");
     actionName.textContent = taskMap[taskKey] || taskMap.neck;
     rehabVideo.src = videoMap[taskKey] || videoMap.neck;
-    rehabVideo.poster = posterMap[taskKey] || posterMap.neck;
+    rehabVideo.poster = taskCover || posterMap[taskKey] || posterMap.neck;
     rehabVideo.load();
 
     showLoading(true);
