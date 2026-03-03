@@ -1,0 +1,88 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanaren Rehab Demo - March 2026</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <section id="dashboardPage" class="page is-active" aria-label="Dashboard">
+      <header class="page-header">
+        <h1>Good Morning, David. Here is your rehab plan today.</h1>
+        <p class="subline">早上好，大卫。这是您今天的康复计划。</p>
+      </header>
+
+      <div class="task-grid">
+        <article class="task-card" data-task="neck">
+          <div class="cover" aria-hidden="true">
+            <span>AI Coach</span>
+          </div>
+          <h2>Neck Relaxation</h2>
+          <p>颈部舒缓</p>
+          <button class="play-btn" type="button">Play</button>
+        </article>
+
+        <article class="task-card" data-task="shoulder">
+          <div class="cover" aria-hidden="true">
+            <span>AI Coach</span>
+          </div>
+          <h2>Shoulder Mobility</h2>
+          <p>肩周活动</p>
+          <button class="play-btn" type="button">Play</button>
+        </article>
+
+        <article class="task-card" data-task="leg">
+          <div class="cover" aria-hidden="true">
+            <span>AI Coach</span>
+          </div>
+          <h2>Leg Strength</h2>
+          <p>下肢力量</p>
+          <button class="play-btn" type="button">Play</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="playerPage" class="page" aria-label="Player">
+      <header class="page-header compact">
+        <h1>AI Rehab Coach Session</h1>
+      </header>
+
+      <div class="player-layout">
+        <div class="video-panel">
+          <video id="rehabVideo" muted autoplay loop playsinline controls poster="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?auto=format&fit=crop&w=1200&q=60">
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <aside class="status-panel">
+          <p id="actionName" class="action-name">Neck Stretch (1/3)</p>
+          <button id="muteToggleBtn" class="secondary-btn" type="button">Unmute</button>
+          <button id="doneBtn" class="primary-btn" type="button">Done / 结束训练</button>
+        </aside>
+      </div>
+    </section>
+
+    <section id="feedbackPage" class="page" aria-label="Feedback">
+      <div class="feedback-box">
+        <div class="success-icon" aria-hidden="true"></div>
+        <h1>Great Job, David!</h1>
+        <p>Your data has been synced to your family.</p>
+        <p>做得好，大卫！您的康复数据已同步给您的家人。</p>
+        <button id="returnBtn" class="primary-btn" type="button">Return to Home / 返回首页</button>
+      </div>
+    </section>
+  </div>
+
+  <div id="loadingOverlay" class="loading-overlay" aria-live="polite" aria-hidden="true">
+    <div class="loading-card">
+      <div class="loading-spinner" aria-hidden="true"></div>
+      <p>Retrieving personalized video from AWS...</p>
+      <p>正在从云端检索个性化视频...</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

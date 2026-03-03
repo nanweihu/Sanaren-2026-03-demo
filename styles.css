@@ -1,0 +1,270 @@
+﻿:root {
+  --bg: #eef6ff;
+  --surface: #ffffff;
+  --text: #123047;
+  --line: #c8dff3;
+  --primary: #1d6fb8;
+  --primary-dark: #175a95;
+  --warm: #f79f4d;
+  --warm-dark: #e3872f;
+  --ok: #17a34a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Arial", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #f8fcff 0%, var(--bg) 70%);
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+.page {
+  display: none;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.page.is-active {
+  display: block;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+  line-height: 1.25;
+}
+
+.subline {
+  margin-top: 0.7rem;
+  font-size: 1.2rem;
+  color: #315169;
+}
+
+.task-grid {
+  margin-top: 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.task-card {
+  border: 2px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  padding: 0.9rem;
+  box-shadow: 0 10px 20px rgba(20, 57, 91, 0.07);
+}
+
+.cover {
+  height: 170px;
+  border-radius: 12px;
+  background: linear-gradient(160deg, #d6eafe 0%, #fdfefe 58%, #ffd8b0 100%);
+  border: 1px solid #b9d2ea;
+  display: grid;
+  place-items: center;
+  color: #2b5a7f;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.task-card h2 {
+  font-size: 1.6rem;
+  margin: 0.95rem 0 0.3rem;
+}
+
+.task-card p {
+  font-size: 1.15rem;
+  margin: 0 0 0.9rem;
+  color: #2a4a61;
+}
+
+button {
+  border: 0;
+  border-radius: 12px;
+  padding: 0.9rem 1.3rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.play-btn,
+.primary-btn {
+  background: var(--warm);
+  color: #1f1f1f;
+}
+
+.play-btn:hover,
+.primary-btn:hover {
+  background: var(--warm-dark);
+}
+
+.player-layout {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 1rem;
+}
+
+.video-panel {
+  border: 2px solid var(--line);
+  border-radius: 18px;
+  background: #fff;
+  overflow: hidden;
+  min-height: 420px;
+}
+
+.video-panel video {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  display: block;
+  background: #e6f2ff;
+}
+
+.status-panel {
+  border: 2px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.action-name {
+  font-size: 1.55rem;
+  margin: 0 0 0.2rem;
+  font-weight: 700;
+}
+
+.secondary-btn {
+  background: var(--primary);
+  color: #fff;
+}
+
+.secondary-btn:hover {
+  background: var(--primary-dark);
+}
+
+.feedback-box {
+  max-width: 760px;
+  margin: 3.5rem auto 0;
+  border: 2px solid var(--line);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 12px 24px rgba(20, 57, 91, 0.09);
+  padding: 2.2rem;
+  text-align: center;
+}
+
+.feedback-box h1 {
+  font-size: clamp(1.9rem, 3vw, 2.7rem);
+  margin: 1rem 0 0.7rem;
+}
+
+.feedback-box p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.success-icon {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: #e8faef;
+  border: 4px solid var(--ok);
+  position: relative;
+  animation: pop-in 0.35s ease-out;
+}
+
+.success-icon::before {
+  content: "";
+  position: absolute;
+  left: 24px;
+  top: 43px;
+  width: 18px;
+  height: 10px;
+  border-left: 6px solid var(--ok);
+  border-bottom: 6px solid var(--ok);
+  transform: rotate(-45deg);
+}
+
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  background: rgba(5, 29, 51, 0.28);
+  place-items: center;
+  padding: 1rem;
+}
+
+.loading-overlay.is-active {
+  display: grid;
+}
+
+.loading-card {
+  width: min(92vw, 560px);
+  background: #fff;
+  border: 2px solid #b8d4ee;
+  border-radius: 16px;
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.loading-card p {
+  margin: 0.35rem 0;
+  font-size: 1.15rem;
+}
+
+.loading-spinner {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 0.7rem;
+  border: 5px solid #d9e9f9;
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pop-in {
+  from {
+    transform: scale(0.7);
+    opacity: 0.2;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 980px) {
+  .task-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .player-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .video-panel,
+  .video-panel video {
+    min-height: 280px;
+  }
+}
