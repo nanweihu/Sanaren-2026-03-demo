@@ -22,6 +22,12 @@ const videoMap = {
   leg: "leg.mp4"
 };
 
+const posterMap = {
+  neck: "assets/neck-cover.svg",
+  shoulder: "assets/shoulder-cover.svg",
+  leg: "assets/leg-cover.svg"
+};
+
 function showPage(page) {
   [dashboardPage, playerPage, feedbackPage].forEach((el) => el.classList.remove("is-active"));
   page.classList.add("is-active");
@@ -38,6 +44,7 @@ playButtons.forEach((button) => {
     const taskKey = taskCard?.dataset.task || "neck";
     actionName.textContent = taskMap[taskKey] || taskMap.neck;
     rehabVideo.src = videoMap[taskKey] || videoMap.neck;
+    rehabVideo.poster = posterMap[taskKey] || posterMap.neck;
     rehabVideo.load();
 
     showLoading(true);
